@@ -1,0 +1,18 @@
+# Root Netlify config (berlaku untuk semua site yang mengambil repo ini).
+# Tiap site tetap disetel base-dir ke apps/<App> sendiri-sendiri.
+# SPA redirect universal agar client routing tidak 404.
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# (Opsional) Security headers ringan; aman untuk semua app.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "0"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"

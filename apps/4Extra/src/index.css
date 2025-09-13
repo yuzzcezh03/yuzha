@@ -1,0 +1,30 @@
+/* Tailwind entry for Launcher (minimal, global-safe) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Baseline reset tweaks */
+html, body, #root {
+  height: 100%;
+}
+
+/* App shell */
+.app-shell {
+  @apply w-screen h-screen overflow-hidden bg-black text-neutral-100 select-none;
+}
+
+/* Simple toolbar (optional, used later) */
+.app-toolbar {
+  @apply fixed top-0 inset-x-0 z-50 flex items-center gap-2 px-3 py-2
+         bg-neutral-900/70 backdrop-blur-sm;
+}
+
+.btn {
+  @apply inline-flex items-center gap-1 px-3 py-1.5 rounded
+         bg-neutral-800 hover:bg-neutral-700 active:bg-neutral-600
+         text-sm leading-none;
+}
+
+.badge {
+  @apply text-xs px-2 py-0.5 rounded bg-neutral-800/60;
+}

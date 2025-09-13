@@ -1,0 +1,48 @@
+{
+  "name": "yuzha-monorepo",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Monorepo apps (Launcher + modules) with shared hub. OPSI 3: multi-URL, single Supabase project (multi-schema).",
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "echo Pilih app: npm run dev:launcher atau dev:modul",
+    "dev:launcher": "npm run dev -w apps/Launcher",
+    "dev:0setting": "npm run dev -w apps/0Setting",
+    "dev:1meng": "npm run dev -w apps/1Meng",
+    "dev:3database": "npm run dev -w apps/3Database",
+    "dev:4extra": "npm run dev -w apps/4Extra",
+    "dev:5rara": "npm run dev -w apps/5Rara",
+    "dev:all": "concurrently \"npm run dev:launcher\" \"npm run dev:0setting\" \"npm run dev:1meng\" \"npm run dev:3database\" \"npm run dev:4extra\" \"npm run dev:5rara\"",
+
+    "build": "echo Pilih app: npm run build:launcher (atau build:<modul>)",
+    "build:launcher": "npm run build -w apps/Launcher",
+    "build:0setting": "npm run build -w apps/0Setting",
+    "build:1meng": "npm run build -w apps/1Meng",
+    "build:3database": "npm run build -w apps/3Database",
+    "build:4extra": "npm run build -w apps/4Extra",
+    "build:5rara": "npm run build -w apps/5Rara",
+    "build:all": "concurrently \"npm run build:launcher\" \"npm run build:0setting\" \"npm run build:1meng\" \"npm run build:3database\" \"npm run build:4extra\" \"npm run build:5rara\""
+
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "typescript": "^5.6.3",
+    "@types/react": "^18.3.7", 
+    "@types/react-dom": "^18.3.0",
+    "vite": "^7.0.4",
+    "concurrently": "^8.2.2"
+  }
+}
